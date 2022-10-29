@@ -37,6 +37,7 @@ function parse_data()
     if(metric.metric == "rOnQueueUsers" && metric.usersId.length != 0)
     {
       let qualifier = metric.qualifier;
+      console.log(qualifier);
       let user_name = "";
       for(const id in agent_metrics[1])
       {
@@ -45,6 +46,7 @@ function parse_data()
           if(id == agent.id)
           {
             user_name = agent.name;
+            console.log(user_name);
           }
         }
       }
@@ -52,7 +54,7 @@ function parse_data()
         "user_name": user_name,
         "status": "active",
         "state": qualifier
-      });   
+      });
     }
   }
   return(agent_data);
@@ -74,7 +76,7 @@ function get_data()
 
     // Toda la respuesta ha sido recibida. Imprimir el resultado.
     resp.on('end', () => { 
-      parse_data();
+      return parse_data();
     });
 
     resp.on("error", (err) => {
