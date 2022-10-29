@@ -1,0 +1,98 @@
+{"metrics": [
+    {
+    "metric": "aEvents",
+    "stats": {
+        "count": 1,
+        "sum": 5468
+    }
+},
+    {
+    "metric": "aCalls",
+    "stats": {
+        "count": 8,
+        "sum": 24720,
+        "min": 0,
+        "max": 9
+    }
+},
+    {
+    "metric": "aAcw",
+    "stats": {
+        "count": 60,
+        "sum": 330290,
+        "min": 0,
+        "max": 119
+    }
+},
+    {
+    "metric": "aSales",
+    "stats": {
+        "count": 0,
+        "sum": 1239,
+        "min": 0,
+        "max": 1
+    }
+},
+    {
+    "metric": "aSchedules",
+    "stats": {
+        "count": 0,
+        "sum": 510,
+        "min": 0,
+        "max": 1
+    }
+},
+    {
+    "metric": "aErrors",
+    "stats": {
+        "count": 0,
+        "sum": 40,
+        "min": 0,
+        "max": 1
+    }
+}
+],
+ "agents": [
+     {"user_name": "Agent 04",
+      "staus": "active",
+      "history" : [
+          { "stade": "interactive",
+            "time": 1666188560
+          },
+          { "stade": "idle",
+            "time": 1666188562
+          },
+          { "state": "acw",
+            "time": 1666188562
+          }
+      ]
+     },
+     {"user_name": "Agent 01",
+      "staus": "active",
+      "history" : [
+          { "state": "idle",
+            "time": 1666188560
+          },
+          { "state": "interactive",
+            "time": 1666188562
+          },
+          { "state": "idle",
+            "time": 1666188562
+          }
+      ]
+     },
+     {"user_name": "Agent 02",
+      "staus": "active",
+      "history" : [
+          { "state": "interactive",
+            "time": 1666188560
+          },
+          { "state": "acw",
+            "time": 1666188562
+          },
+          { "state": "idle",
+            "time": 1666188562
+          }
+      ]
+     }
+ ]}
