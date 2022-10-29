@@ -55,44 +55,14 @@
  "agents": [
      {"user_name": "Agent 04",
       "staus": "active",
-      "history" : [
-          { "stade": "interactive",
-            "time": 1666188560
-          },
-          { "stade": "idle",
-            "time": 1666188562
-          },
-          { "state": "acw",
-            "time": 1666188562
-          }
-      ]
+      "state": "acw"
      },
      {"user_name": "Agent 01",
       "staus": "active",
-      "history" : [
-          { "state": "idle",
-            "time": 1666188560
-          },
-          { "state": "interactive",
-            "time": 1666188562
-          },
-          { "state": "idle",
-            "time": 1666188562
-          }
-      ]
+      "state": "idle"
      },
      {"user_name": "Agent 02",
-      "staus": "active",
-      "history" : [
-          { "state": "interactive",
-            "time": 1666188560
-          },
-          { "state": "acw",
-            "time": 1666188562
-          },
-          { "state": "idle",
-            "time": 1666188562
-          }
-      ]
+      "status": "active",
+      "state": "interactive"
      }
- ]}
+]}
