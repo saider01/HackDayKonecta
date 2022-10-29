@@ -1,4 +1,4 @@
-const express = require('express'); //Line 1
+const express = require("express");
 const app = express(); //Line 2
 const https = require('https');
 const port = process.env.PORT || 5000; //Line 3
@@ -9,25 +9,29 @@ const __API_REST_PUBLIC = "https://mqjl9s6vf4.execute-api.eu-west-1.amazonaws.co
 // This displays message that the server running and listening to specified port
 app.listen(port, () => console.log(`Listening on port ${port}`)); //Line 6
 
-// create a GET route
-app.get('/express_backend', (req, res) => { //Line 9
-  res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' }); //Line 10
-}); //Line 11
-
-
+let json = "";
 https.get(__API_REST_PUBLIC, (resp) => {
-  let data = '';
 
   // Un fragmento de datos ha sido recibido.
   resp.on('data', (chunk) => {
-    data += chunk;
+    json += chunk;
   });
 
   // Toda la respuesta ha sido recibida. Imprimir el resultado.
-  resp.on('end', () => {
-    console.log(JSON.parse(data).explanation);
+  resp.on('end', () => {	
+	let json_data = JSON.parse(json);
+	let events = JSON.parse(json_data.payload.data.onCreateHackathonEvents.event).detail.events;
+
+	let agent_status = events[0];
+	let indicators = events[1];
+
+	let agent_status_service = agent_status.detail.eventBody.service;
+	let agent_status_metrics = agent_status.detail.eventBody.data.metrics;
+	console.log(agent_status_service);
+	console.log(agent_status_metrics);
   });
 
 }).on("error", (err) => {
   console.log("Error: " + err.message);
 });
+		
